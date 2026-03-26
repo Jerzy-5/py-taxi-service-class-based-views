@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Cars</h1>
+    <table>
+  <tr>
+    <td>ID</td>
+    <td>Model</td>
+    <td>Manufacturer</td>
+      <td>Drivers</td>
+
+  </tr>
+        {% for car in object_list %}
+  <tr>
+
+    <td><a href="{% url "taxi:car-detail" car.id %}">{{ car.id }}</a></td>
+
+    <td>{{ car.model }}</td>
+    <td>{{ car.manufacturer.name }}</td>
+  <td>{{ car.drivers.name }}</td>
+  </tr>
+        {% endfor %}
+</table>
+</body>
+</html>

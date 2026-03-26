@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+        <p>Car Id: {{ car.id }}</p>
+        <p>Manufacturer: {{ car.manufacturer.name }}</p>
+        <p>Country: {{ car.manufacturer.country }}</p>
+        <p>Drivers License Numbers: </p>
+        {% for driver in car.drivers.all %}
+            <p>{{ driver.license_number }}</p>
+        {% endfor %}
+        <br>
+        <br>
+</body>
+</html>
