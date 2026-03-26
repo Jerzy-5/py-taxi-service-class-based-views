@@ -1,30 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driver Cars</title>
+{% extends "base.html" %}
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-gHfj5qhkfEaa52c0x4C0Bx76pa3H7K1Z2a9+kU7JdXsMzxZXYoR3G7pCkXl0g2E2"
-        crossorigin="anonymous"
-    >
-</head>
-<body>
+{% block content %}
     {% for car in driver.cars.all %}
         <p class="fw-bold">Car Id: {{ car.id }}</p>
         <p class="text-primary">Model: {{ car.model }}</p>
         <br>
         <br>
     {% endfor %}
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-VK+9X2M3E8R6G1T1hcqF/7FqGZ5q3qLz6MXY2NqZbM+ZK8qlmXoFy1Nf/2iYwlG7"
-        crossorigin="anonymous">
-    </script>
-</body>
-</html>
+{% endblock %}
