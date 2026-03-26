@@ -48,4 +48,7 @@ class DriverDetailView(DetailView):
     model = Driver
 
     def get_queryset(self):
-        return Driver.objects.prefetch_related("cars")
+        cars_prefetch = Prefetch("cars",
+                                 queryset=Car.objects.
+                                 select_related("manufacturer"))
+        return Driver.objects.prefetch_related(cars_prefetch)
